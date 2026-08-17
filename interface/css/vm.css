@@ -1,0 +1,152 @@
+/* =========================================================
+   TELA DA MÁQUINA VIRTUAL
+   ========================================================= */
+
+.vm-screen {
+    min-height: 100vh;
+    background: #05070a;
+    color: white;
+}
+
+.vm-display-area {
+    height: calc(100vh - 136px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.vm-monitor {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    aspect-ratio: 16 / 9;
+    background: #090d13;
+    border: 1px solid #202a36;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.vm-system {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.vm-system-logo {
+    width: 75px;
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #1677ff;
+    border-radius: 18px;
+
+    font-size: 32px;
+
+    margin-bottom: 20px;
+}
+
+.vm-system h1 {
+    font-size: 28px;
+}
+
+.vm-system p {
+    color: #758193;
+    margin-top: 8px;
+}
+
+.vm-loading {
+    margin-top: 20px;
+    color: #318bff;
+    font-size: 13px;
+}
+
+/* Cursor virtual */
+
+.vm-cursor {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    font-size: 28px;
+
+    pointer-events: none;
+
+    filter: drop-shadow(
+        0 2px 3px black
+    );
+}
+
+/* Barra */
+
+.vm-control-bar {
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+
+    background: #0b0f15;
+
+    border-top: 1px solid #1c2530;
+}
+
+.vm-control {
+    min-width: 65px;
+
+    border: none;
+    background: transparent;
+
+    color: #aab4c2;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 4px;
+}
+
+.vm-control:hover {
+    color: #2685ff;
+}
+
+.vm-control span {
+    font-size: 20px;
+}
+
+.vm-control small {
+    font-size: 10px;
+}
+
+@media (max-width: 600px) {
+
+    .vm-display-area {
+        height: calc(100vh - 136px);
+        padding: 8px;
+    }
+
+    .vm-monitor {
+        aspect-ratio: 16 / 10;
+    }
+
+    .vm-control-bar {
+        gap: 5px;
+    }
+
+}
