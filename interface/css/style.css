@@ -1,4 +1,4 @@
-* {
+{`* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -235,6 +235,145 @@ body {
     width: 100%;
 }
 
+/* =========================================================
+   TELA DA VM
+   ========================================================= */
+
+.vm-body {
+    overflow: hidden;
+    background: #05070a;
+}
+
+.vm-topbar {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 18px;
+    background: #0b0f15;
+    border-bottom: 1px solid #1c2530;
+}
+
+.vm-title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-weight: 600;
+}
+
+.vm-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #28c76f;
+    box-shadow: 0 0 10px #28c76f;
+}
+
+.vm-menu {
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.vm-workspace {
+    height: calc(100vh - 136px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.vm-display {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    aspect-ratio: 16 / 9;
+    background: #090d13;
+    border: 1px solid #202a36;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.5);
+}
+
+.vm-display-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.vm-logo {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    background: #1677ff;
+    font-size: 32px;
+    margin-bottom: 18px;
+}
+
+.vm-display-content h1 {
+    font-size: 28px;
+}
+
+.vm-display-content p {
+    margin-top: 8px;
+    color: #778394;
+}
+
+.boot-text {
+    margin-top: 20px;
+    color: #3c8cff;
+    font-size: 13px;
+}
+
+.virtual-cursor {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 27px;
+    color: white;
+    filter: drop-shadow(0 2px 3px black);
+    pointer-events: none;
+}
+
+.vm-toolbar {
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    background: #0b0f15;
+    border-top: 1px solid #1c2530;
+}
+
+.vm-toolbar button {
+    min-width: 65px;
+    border: none;
+    background: transparent;
+    color: #aab4c2;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.vm-toolbar button:hover {
+    color: #2685ff;
+}
+
+.vm-toolbar small {
+    font-size: 10px;
+}
+
 @media (max-width: 600px) {
 
     .topbar {
@@ -261,4 +400,18 @@ body {
     .bottom-nav {
         gap: 25px;
     }
-}
+
+    .vm-workspace {
+        height: calc(100vh - 136px);
+        padding: 8px;
+    }
+
+    .vm-display {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+    }
+
+    .vm-toolbar {
+        gap: 8px;
+    }
+}`}
