@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Configurações - VirtualPC</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <button
+        class="back"
+        onclick="history.back()">
+
+        ←
+
+    </button>
+
+    <div class="logo">
+
+        <span class="logo-icon">▣</span>
+
+        <span>Configurações</span>
+
+    </div>
+
+    <div class="header-space"></div>
+
+</header>
+
+
+<main class="create-page">
+
+    <section class="page-title">
+
+        <span class="badge">
+            VIRTUALPC
+        </span>
+
+        <h1>Configurações</h1>
+
+        <p>
+            Configure o comportamento do VirtualPC.
+        </p>
+
+    </section>
+
+
+    <section class="form-card">
+
+        <h2>Máquina virtual</h2>
+
+        <p class="config-description">
+            Gerencie os dados da máquina virtual
+            criada neste dispositivo.
+        </p>
+
+        <button
+            class="create-button full"
+            onclick="abrirMinhaVM()">
+
+            🖥️ Abrir minha VM
+
+        </button>
+
+        <button
+            class="delete-button"
+            onclick="limparVM()">
+
+            🗑️ Apagar VM
+
+        </button>
+
+    </section>
+
+</main>
+
+
+<script src="js/app.js"></script>
+
+</body>
+
+</html>
