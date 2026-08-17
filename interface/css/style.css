@@ -1,0 +1,264 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080b10;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+.topbar {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    border-bottom: 1px solid #1d232c;
+    background: #0b0f15;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.logo-icon {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    background: #1677ff;
+    font-size: 17px;
+}
+
+.settings,
+.back {
+    border: none;
+    background: transparent;
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.back {
+    font-size: 28px;
+}
+
+.header-space {
+    width: 30px;
+}
+
+.home,
+.create-page {
+    width: min(900px, calc(100% - 40px));
+    margin: auto;
+}
+
+.home {
+    padding: 70px 0 120px;
+}
+
+.hero {
+    margin-bottom: 45px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 20px;
+    background: #10294a;
+    color: #4da0ff;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+}
+
+.hero h1 {
+    margin-top: 18px;
+    font-size: clamp(42px, 7vw, 72px);
+    line-height: 1.02;
+}
+
+.hero h1 span {
+    color: #2385ff;
+}
+
+.hero p,
+.page-title p {
+    margin-top: 18px;
+    max-width: 560px;
+    color: #8e98a8;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.create-button {
+    margin-top: 28px;
+    border: none;
+    border-radius: 12px;
+    padding: 15px 23px;
+    background: #1677ff;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.create-button:hover {
+    transform: translateY(-2px);
+    background: #2d8aff;
+}
+
+.create-button span {
+    font-size: 20px;
+    margin-right: 6px;
+}
+
+.empty-card,
+.form-card {
+    background: #0d1219;
+    border: 1px solid #1d2632;
+    border-radius: 18px;
+}
+
+.empty-card {
+    padding: 60px 25px;
+    text-align: center;
+}
+
+.computer-icon {
+    font-size: 50px;
+    margin-bottom: 18px;
+}
+
+.empty-card h2 {
+    font-size: 20px;
+}
+
+.empty-card p {
+    color: #747f90;
+    margin-top: 10px;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    background: #0b0f15;
+    border-top: 1px solid #1d232c;
+}
+
+.nav-item {
+    min-width: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    color: #697383;
+    text-decoration: none;
+}
+
+.nav-item span {
+    font-size: 21px;
+}
+
+.nav-item small {
+    font-size: 11px;
+}
+
+.nav-item.active {
+    color: #2685ff;
+}
+
+.create-page {
+    padding: 55px 0 80px;
+}
+
+.page-title h1 {
+    margin-top: 18px;
+    font-size: 42px;
+}
+
+.form-card {
+    margin-top: 35px;
+    padding: 30px;
+}
+
+.form-card label {
+    display: block;
+    margin-bottom: 9px;
+    margin-top: 22px;
+    color: #c8d0dc;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-card label:first-child {
+    margin-top: 0;
+}
+
+.form-card input,
+.form-card select {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #263140;
+    border-radius: 10px;
+    outline: none;
+    padding: 0 15px;
+    background: #080c12;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.form-card input:focus,
+.form-card select:focus {
+    border-color: #1677ff;
+}
+
+.full {
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+
+    .topbar {
+        padding: 0 18px;
+    }
+
+    .home,
+    .create-page {
+        width: calc(100% - 28px);
+    }
+
+    .home {
+        padding-top: 45px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .form-card {
+        padding: 22px;
+    }
+
+    .bottom-nav {
+        gap: 25px;
+    }
+}
