@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Criar VM - VirtualPC</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+
+        <button class="back"
+                onclick="window.location.href='index.html'">
+            ←
+        </button>
+
+        <div class="logo">
+            <span class="logo-icon">▣</span>
+            <span>VirtualPC</span>
+        </div>
+
+        <div class="header-space"></div>
+
+    </header>
+
+    <main class="create-page">
+
+        <div class="page-title">
+
+            <span class="badge">NOVA MÁQUINA</span>
+
+            <h1>Criar sua VM</h1>
+
+            <p>
+                Escolha os recursos que sua máquina virtual
+                terá.
+            </p>
+
+        </div>
+
+        <section class="form-card">
+
+            <label>Nome da máquina</label>
+
+            <input
+                type="text"
+                placeholder="Ex: Minha VM"
+                id="vmName"
+            >
+
+            <label>Memória RAM</label>
+
+            <select id="ram">
+
+                <option value="2">2 GB</option>
+                <option value="4">4 GB</option>
+                <option value="8" selected>8 GB</option>
+                <option value="16">16 GB</option>
+                <option value="32">32 GB</option>
+                <option value="64">64 GB</option>
+                <option value="128">128 GB</option>
+                <option value="256">256 GB</option>
+                <option value="512">512 GB</option>
+
+            </select>
+
+            <label>Armazenamento</label>
+
+            <select id="storage">
+
+                <option value="32">32 GB</option>
+                <option value="64">64 GB</option>
+                <option value="128">128 GB</option>
+                <option value="256" selected>256 GB</option>
+                <option value="512">512 GB</option>
+                <option value="1024">1 TB</option>
+                <option value="2048">2 TB</option>
+
+            </select>
+
+            <label>CPU</label>
+
+            <select id="cpu">
+
+                <option value="2">2 núcleos</option>
+                <option value="4" selected>4 núcleos</option>
+                <option value="6">6 núcleos</option>
+                <option value="8">8 núcleos</option>
+                <option value="12">12 núcleos</option>
+                <option value="16">16 núcleos</option>
+
+            </select>
+
+            <button class="create-button full"
+                    onclick="criarVM()">
+
+                Criar máquina
+
+            </button>
+
+        </section>
+
+    </main>
+
+    <script>
+
+        function criarVM() {
+
+            const nome =
+                document.getElementById("vmName").value;
+
+            const ram =
+                document.getElementById("ram").value;
+
+            const storage =
+                document.getElementById("storage").value;
+
+            const cpu =
+                document.getElementById("cpu").value;
+
+            if (!nome.trim()) {
+
+                alert("Digite um nome para sua VM.");
+
+                return;
+
+            }
+
+            const vm = {
+
+                nome: nome,
+                ram: ram,
+                storage: storage,
+                cpu: cpu
+
+            };
+
+            localStorage.setItem(
+                "virtualPC_vm",
+                JSON.stringify(vm)
+            );
+
+            alert("VM criada com sucesso!");
+
+            window.location.href = "index.html";
+        }
+
+    </script>
+
+</body>
+</html>
