@@ -1,0 +1,98 @@
+.create-page {
+    width: min(700px, calc(100% - 30px));
+
+    margin: auto;
+
+    padding:
+        50px 0 100px;
+}
+
+.create-page .page-title {
+    margin-bottom: 30px;
+}
+
+.form-card {
+    padding: 30px;
+
+    background: #0d1219;
+
+    border: 1px solid #1d2632;
+
+    border-radius: 18px;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-card label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #c9d1dc;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.form-card input,
+.form-card select {
+
+    width: 100%;
+
+    height: 52px;
+
+    padding: 0 15px;
+
+    border-radius: 10px;
+
+    border: 1px solid #263140;
+
+    outline: none;
+
+    background: #080c12;
+
+    color: white;
+
+    font-size: 15px;
+
+}
+
+.form-card input:focus,
+.form-card select:focus {
+
+    border-color: #1677ff;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(22, 119, 255, 0.1);
+
+}
+
+.form-card select {
+
+    cursor: pointer;
+
+}
+
+.create-button.full {
+
+    width: 100%;
+
+    margin-top: 10px;
+
+}
+
+@media (max-width: 600px) {
+
+    .create-page {
+        padding-top: 35px;
+    }
+
+    .form-card {
+        padding: 22px;
+    }
+
+}
