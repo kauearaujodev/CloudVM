@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>VM - VirtualPC</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css">
+
+</head>
+
+<body class="vm-body">
+
+<header class="vm-topbar">
+
+    <button
+        class="back"
+        onclick="window.location.href='minhas-vms.html'">
+
+        ←
+
+    </button>
+
+    <div class="vm-title">
+
+        <span class="vm-dot"></span>
+
+        <span id="vmName">
+            Virtual Machine
+        </span>
+
+    </div>
+
+    <button
+        class="vm-menu">
+
+        ⋮
+
+    </button>
+
+</header>
+
+
+<main class="vm-workspace">
+
+    <div class="vm-display">
+
+        <div class="vm-display-content">
+
+            <div class="vm-logo">
+                ▣
+            </div>
+
+            <h1>VirtualPC</h1>
+
+            <p>
+                Máquina virtual inicializada
+            </p>
+
+            <span class="boot-text">
+                Preparando sistema...
+            </span>
+
+        </div>
+
+        <!-- Cursor virtual futuramente -->
+
+        <div
+            id="virtualCursor"
+            class="virtual-cursor">
+
+            ➤
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<div class="vm-toolbar">
+
+    <button>
+        ⌨
+        <small>Teclado</small>
+    </button>
+
+    <button>
+        🖱️
+        <small>Mouse</small>
+    </button>
+
+    <button>
+        ⚙
+        <small>Config.</small>
+    </button>
+
+    <button>
+        ⏻
+        <small>Desligar</small>
+    </button>
+
+</div>
+
+
+<script>
+
+const dados =
+    localStorage.getItem("virtualPC_vm");
+
+if (dados) {
+
+    const vm = JSON.parse(dados);
+
+    document.getElementById("vmName")
+        .textContent = vm.nome;
+
+}
+
+</script>
+
+</body>
+</html>
