@@ -1,13 +1,15 @@
 pub struct WindowsSystem {
     pub installed: bool,
-    pub version: String,
+    pub services_running: bool,
+    pub processes_running: bool,
 }
 
 impl WindowsSystem {
-    pub fn new(version: String) -> Self {
+    pub fn new() -> Self {
         Self {
             installed: false,
-            version,
+            services_running: false,
+            processes_running: false,
         }
     }
 
@@ -15,7 +17,15 @@ impl WindowsSystem {
         self.installed = true;
     }
 
-    pub fn is_installed(&self) -> bool {
-        self.installed
+    pub fn start(&mut self) {
+        if self.installed {
+            self.services_running = true;
+            self.processes_running = true;
+        }
+    }
+
+    pub fn shutdown(&mut self) {
+        self.services_running = false;
+        self.processes_running = false;
     }
 }
