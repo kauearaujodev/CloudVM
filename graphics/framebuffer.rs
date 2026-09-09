@@ -5,7 +5,10 @@ pub struct FrameBuffer {
 }
 
 impl FrameBuffer {
-    pub fn new(width: u32, height: u32) -> Self {
+    pub fn new(
+        width: u32,
+        height: u32,
+    ) -> Self {
         let size = (width as usize)
             .saturating_mul(height as usize);
 
@@ -27,14 +30,11 @@ impl FrameBuffer {
         color: u32,
     ) -> Result<(), String> {
         if x >= self.width || y >= self.height {
-            return Err(format!(
-                "Pixel ({}, {}) fora da tela.",
-                x, y
-            ));
+            return Err("Pixel fora da tela.".to_string());
         }
 
         let index =
-            (y as usize * self.width as usize)
+            y as usize * self.width as usize
             + x as usize;
 
         self.pixels[index] = color;
@@ -48,14 +48,11 @@ impl FrameBuffer {
         y: u32,
     ) -> Result<u32, String> {
         if x >= self.width || y >= self.height {
-            return Err(format!(
-                "Pixel ({}, {}) fora da tela.",
-                x, y
-            ));
+            return Err("Pixel fora da tela.".to_string());
         }
 
         let index =
-            (y as usize * self.width as usize)
+            y as usize * self.width as usize
             + x as usize;
 
         Ok(self.pixels[index])
@@ -63,10 +60,6 @@ impl FrameBuffer {
 
     pub fn pixels(&self) -> &[u32] {
         &self.pixels
-    }
-
-    pub fn pixels_mut(&mut self) -> &mut [u32] {
-        &mut self.pixels
     }
 
     pub fn resize(
@@ -81,9 +74,5 @@ impl FrameBuffer {
             .saturating_mul(height as usize);
 
         self.pixels.resize(size, 0);
-    }
-
-    pub fn size(&self) -> usize {
-        self.pixels.len()
     }
 }
