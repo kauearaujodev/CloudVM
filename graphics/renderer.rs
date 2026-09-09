@@ -12,11 +12,8 @@ impl Renderer {
         height: u32,
     ) -> Self {
         Self {
-            framebuffer: FrameBuffer::new(
-                width,
-                height,
-            ),
-            enabled: true,
+            framebuffer: FrameBuffer::new(width, height),
+            enabled: false,
             frame_count: 0,
         }
     }
@@ -33,11 +30,7 @@ impl Renderer {
         &mut self,
         color: u32,
     ) -> Result<(), String> {
-        if !self.enabled {
-            return Err(
-                "Renderizador desativado.".to_string()
-            );
-        }
+        self.check_enabled()?;
 
         self.framebuffer.clear(color);
 
@@ -50,27 +43,13 @@ impl Renderer {
         y: u32,
         color: u32,
     ) -> Result<(), String> {
-        if !self.enabled {
-            return Err(
-                "Renderizador desativado.".to_string()
-            );
-        }
+        self.check_enabled()?;
 
-        self.framebuffer.set_pixel(
-            x,
-            y,
-            color,
-        )
+        self.framebuffer.set_pixel(x, y, color)
     }
 
-    pub fn render_frame(
-        &mut self,
-    ) -> Result<(), String> {
-        if !self.enabled {
-            return Err(
-                "Renderizador desativado.".to_string()
-            );
-        }
+    pub fn render_frame(&mut self) -> Result<(), String> {
+        self.check_enabled()?;
 
         self.frame_count += 1;
 
@@ -81,18 +60,21 @@ impl Renderer {
         &mut self,
         width: u32,
         height: u32,
-    ) {
-        self.framebuffer.resize(
-            width,
-            height,
-        );
+    ) -> Result<(), String> {
+        if width == 0 || height == 0 {
+            return Err("Resolução inválida.".to_string());
+        }
+
+        self.framebuffer.resize(width, height);
+
+        Ok(())
     }
 
-    pub fn width(&self) -> u32 {
-        self.framebuffer.width
-    }
+    fn check_enabled(&self) -> Result<(), String> {
+        if !self.enabled {
+            return Err("Renderizador desativado.".to_string());
+        }
 
-    pub fn height(&self) -> u32 {
-        self.framebuffer.height
+        Ok(())
     }
 }
